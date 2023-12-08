@@ -1,0 +1,67 @@
+.chatbox {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    height: 400px; /* Fixed height for the entire chatbox */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    flex-grow: 1; /* Allows this area to grow and fill available space */
+    max-height: calc(100% - 60px); /* Adjust the max-height to account for input area */
+}
+
+.message {
+    padding: 5px 10px;
+    border-radius: 20px;
+    max-width: 70%;
+}
+
+.message.user {
+    align-self: end;
+    background-color: #e0e0e0;
+}
+
+.message.bot {
+    align-self: start;
+    background-color: #f0f0f0;
+}
+
+.input-area {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    height: 50px; /* Fixed height for the input area */
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.input-area button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,62 @@
+/* Styling for the search page */
+.search-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align search bar and grid in the center */
+}
+
+/* Styling for the search container */
+.search-container {
+    width: 100%; /* Full width to center the search bar */
+    max-width: 960px; /* Maximum width of the search bar container */
+    margin: 20px auto; /* Centering the container */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Align items vertically */
+    padding: 20px; /* Add some padding */
+}
+
+/* Style for the search input */
+.search-input {
+    flex-grow: 1; /* Allow input to grow and fill space */
+    padding: 10px;
+    margin-right: 10px; /* Space between input and button */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style for the search button */
+.search-link {
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #333fff; /* Button background color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Change cursor to pointer */
+    text-decoration: none; /* Remove underline from link */
+}
+
+/* Styling for the picture grid */
+.picture-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px;
+}
+
+a img {
+    margin: 10px; /* Space between images */
+    width: 240px; /* Adjust the size of your images */
+    height: auto;
+    cursor: pointer; /* Change cursor to indicate clickable */
+    border-radius: 7%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a img:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+}
