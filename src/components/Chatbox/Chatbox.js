@@ -4,7 +4,8 @@ import './Chatbox.css'; // Ensure you have the corresponding CSS file
 const Chatbox = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [isTyping, setIsTyping] = useState(false); // State to track bot's typing status
+  const [isTyping, setIsTyping] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false); // New state to track if chatbox is minimized
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -20,7 +21,7 @@ const Chatbox = () => {
       const newMessage = { author: 'user', text: input };
       setMessages([...messages, newMessage]);
       setIsTyping(true); // Set bot as typing
-      const response = await fetch('http://localhost:5001/chat', {
+      const response = await fetch('http://localhost:5000/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input }),
@@ -32,8 +33,15 @@ const Chatbox = () => {
     }
   };
 
+  const toggleMinimize = () => {
+    setIsMinimized(!isMinimized);
+  };
+
   return (
-    <div className="chatbox">
+    <div className={`chatbox ${isMinimized ? 'minimized' : ''}`}>
+      <button onClick={toggleMinimize}> 
+        {isMinimized ? 'Maximize' : 'Minimize'}
+      </button>
       <div className="messages">
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.author}`}>

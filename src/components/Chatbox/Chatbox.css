@@ -12,6 +12,13 @@
     flex-direction: column;
 }
 
+.chatbox.minimized {
+    right: 0; /* Align to the right */
+    width: 50px; /* Shrink width */
+    height: 50px; /* Shrink height */
+    /* Add any additional styling for the minimized state */
+}
+
 .messages {
     padding: 10px;
     display: flex;
